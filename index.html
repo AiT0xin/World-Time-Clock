@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patek Philippe 5110 World Time — Live</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23d3a445'/%3E%3Ccircle cx='50' cy='50' r='33' fill='%23f2efe6'/%3E%3Ccircle cx='50' cy='50' r='22' fill='%231b1d21'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23f6f3ea'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#e8e4da; --mut:#867f72; --dim:#b2ab9d;
+    --ok:#6fcf97; --warn:#e2b34c; --sim:#8fa3c8;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{background:transparent}
+  body{
+    margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    font-family:"Avenir Next","Futura","Helvetica Neue",Arial,sans-serif;color:var(--dim);
+    padding:4vmin 0;transition:background-color .35s ease;
+  }
+  html.dark-bg,body.dark-bg{background-color:#191919}
+  main{display:flex;flex-direction:column;align-items:center;gap:2.2vmin;animation:fade .9s ease both}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){main{animation:none}}
+  figure{width:min(92vmin,620px);margin:0}
+  svg{display:block;width:100%;height:auto;filter:drop-shadow(0 22px 46px rgba(0,0,0,.45))}
+  svg text{font-family:"Avenir Next Condensed","Avenir Next","Helvetica Neue",Arial,sans-serif}
+  .hit{cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+  <figure aria-label="Patek Philippe reference 5110 World Time, live">
+  <svg id="svg" viewBox="144 148 750 704" role="img">
+    <defs>
+      <linearGradient id="goldCase" x1=".12" y1="0" x2=".82" y2="1">
+        <stop offset="0"   stop-color="#f4dda2"/><stop offset=".38" stop-color="#ddb663"/>
+        <stop offset=".72" stop-color="#c99a45"/><stop offset="1"   stop-color="#b1832f"/>
+      </linearGradient>
+      <linearGradient id="goldBezel" x1=".18" y1="0" x2=".78" y2="1">
+        <stop offset="0"   stop-color="#f7e4ae"/><stop offset=".4" stop-color="#e0ba6b"/>
+        <stop offset=".75" stop-color="#cba149"/><stop offset="1"   stop-color="#d9b262"/>
+      </linearGradient>
+      <linearGradient id="goldFlank" x1="0" y1="0" x2="1" y2=".4">
+        <stop offset="0" stop-color="#c09141"/><stop offset=".4" stop-color="#e5c184"/>
+        <stop offset=".78" stop-color="#c99a45"/><stop offset="1" stop-color="#a87c2c"/>
+      </linearGradient>
+      <linearGradient id="goldHand" x1="0" y1="0" x2=".8" y2="1">
+        <stop offset="0" stop-color="#fbeec3"/><stop offset=".45" stop-color="#d2a446"/>
+        <stop offset="1" stop-color="#8f6a20"/>
+      </linearGradient>
+      <radialGradient id="dialGrad" cx=".36" cy=".26" r=".92">
+        <stop offset="0" stop-color="#fffdf8"/><stop offset=".5" stop-color="#f4f1e8"/>
+        <stop offset=".85" stop-color="#e4dfd2"/><stop offset="1" stop-color="#d3ccbc"/>
+      </radialGradient>
+      <radialGradient id="ringGrad" cx=".38" cy=".24" r=".95">
+        <stop offset="0" stop-color="#fffefa"/><stop offset=".55" stop-color="#f2efe6"/>
+        <stop offset="1" stop-color="#ddd7c9"/>
+      </radialGradient>
+      <radialGradient id="dayGrad" cx=".4" cy=".28" r=".95">
+        <stop offset="0" stop-color="#fbf9f3"/><stop offset="1" stop-color="#e0dbcd"/>
+      </radialGradient>
+      <linearGradient id="nightGrad" x1=".1" y1="0" x2=".8" y2="1">
+        <stop offset="0" stop-color="#33363d"/><stop offset=".45" stop-color="#1a1c21"/>
+        <stop offset="1" stop-color="#0d0e12"/>
+      </linearGradient>
+      <radialGradient id="crystal" cx=".3" cy=".16" r=".95">
+        <stop offset="0" stop-color="#ffffff" stop-opacity=".30"/>
+        <stop offset=".38" stop-color="#ffffff" stop-opacity=".06"/>
+        <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+      </radialGradient>
+      <clipPath id="dialClip"><circle cx="500" cy="500" r="156"/></clipPath>
+      <clipPath id="caseClip"><circle cx="500" cy="500" r="340"/></clipPath>
+      <filter id="caseShadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000" flood-opacity=".34"/>
+      </filter>
+      <filter id="handShadow" x="-40%" y="-40%" width="180%" height="180%">
+        <feDropShadow dx="2.5" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".30"/>
+      </filter>
+      <filter id="specBlur" x="-25%" y="-25%" width="150%" height="150%">
+        <feGaussianBlur stdDeviation="14"/>
+      </filter>
+      <filter id="ringInset" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#000" flood-opacity=".28"/>
+      </filter>
+    </defs>
+
+    <g id="watch"></g>
+  </svg>
+  </figure>
+</main>
+
+<script>
+'use strict';
+const NS='http://www.w3.org/2000/svg';
+const CX=500, CY=500;
+const $=id=>document.getElementById(id);
+function el(tag,attrs,parent){
+  const n=document.createElementNS(NS,tag);
+  for(const k in attrs) n.setAttribute(k,attrs[k]);
+  (parent||$('watch')).appendChild(n);
+  return n;
+}
+const rad=d=>(d-90)*Math.PI/180;
+function pol(r,ang){const a=rad(ang);return [CX+r*Math.cos(a),CY+r*Math.sin(a)];}
+function annulus(rIn,rOut,a1,a2){
+  const large=Math.abs(a2-a1)>180?1:0;
+  const [x1,y1]=pol(rOut,a1),[x2,y2]=pol(rOut,a2),[x3,y3]=pol(rIn,a2),[x4,y4]=pol(rIn,a1);
+  return `M${x1} ${y1} A${rOut} ${rOut} 0 ${large} 1 ${x2} ${y2}`
+       + `L${x3} ${y3} A${rIn} ${rIn} 0 ${large} 0 ${x4} ${y4} Z`;
+}
+
+/* ---------- proportions, measured off the reference dial ----------
+   with the case radius as unity: city ring 0.57 → 0.84, hour ring 0.465 → 0.57,
+   guilloche centre 0.465. The city band is deliberately ~2.4x the hour band.   */
+const R_CASE=340;
+const R_CITY_OUT=285, R_CITY_IN=205;
+const R_CITY_TXT_OUT=262, R_CITY_TXT_IN=217;   // names alternate between two radii
+const R_H_OUT=194, R_H_IN=158, R_H_TXT=176;
+const R_DIAL=156;
+
+/* ---------- the Cottier city ring: 24 zones, one per hour of longitude ---------- */
+const CITIES=[
+  ['LONDON',      'Europe/London',        0],
+  ['PARIS',       'Europe/Paris',         1],
+  ['CAIRO',       'Africa/Cairo',         2],
+  ['MOSCOW',      'Europe/Moscow',        3],
+  ['DUBAI',       'Asia/Dubai',           4],
+  ['KARACHI',     'Asia/Karachi',         5],
+  ['DACCA',       'Asia/Dhaka',           6],
+  ['BANGKOK',     'Asia/Bangkok',         7],
+  ['SINGAPORE',   'Asia/Singapore',       8],
+  ['TOKYO',       'Asia/Tokyo',           9],
+  ['SYDNEY',      'Australia/Sydney',    10],
+  ['NOUMEA',      'Pacific/Noumea',      11],
+  ['AUCKLAND',    'Pacific/Auckland',    12],
+  ['MIDWAY',      'Pacific/Midway',     -11],
+  ['HAWAII',      'Pacific/Honolulu',   -10],
+  ['ANCHORAGE',   'America/Anchorage',   -9],
+  ['L. ANGELES',  'America/Los_Angeles', -8],
+  ['DENVER',      'America/Denver',      -7],
+  ['MEXICO',      'America/Mexico_City', -6],
+  ['NEW YORK',    'America/New_York',    -5],
+  ['CARACAS',     'America/Caracas',     -4],
+  ['RIO',         'America/Sao_Paulo',   -3],
+  ['S. GEORGIA',  'Atlantic/South_Georgia',-2],
+  ['AZORES',      'Atlantic/Azores',     -1]
+];
+const N=CITIES.length, STEP=360/N;   // 15° per zone
+
+// true UTC offset (minutes) of an IANA zone at instant ms — honours DST
+const fmtCache={};
+function zoneFmt(tz){
+  if(!fmtCache[tz]) fmtCache[tz]=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hourCycle:'h23',
+    year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  return fmtCache[tz];
+}
+function zoneOffsetMin(tz,ms){
+  const p={};
+  for(const{type,value} of zoneFmt(tz).formatToParts(new Date(ms))) p[type]=value;
+  const asUTC=Date.UTC(+p.year,+p.month-1,+p.day,+p.hour,+p.minute,+p.second);
+  return Math.round((asUTC-Math.floor(ms/1000)*1000)/60000);
+}
+function zoneAbbr(tz,ms){
+  try{
+    const f=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'short'});
+    const p=f.formatToParts(new Date(ms)).find(x=>x.type==='timeZoneName');
+    return p?p.value:'';
+  }catch(e){return '';}
+}
+
+/* home city — defaults to the ring zone nearest the browser's own offset */
+let homeIdx=(function(){
+  const tz=Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const exact=CITIES.findIndex(c=>c[1]===tz);
+  if(exact>=0)return exact;
+  const off=-new Date().getTimezoneOffset()/60;
+  let best=0,bd=99;
+  for(let i=0;i<N;i++){const d=Math.abs(CITIES[i][2]-off);if(d<bd){bd=d;best=i;}}
+  return best;
+})();
+try{const s=localStorage.getItem('pp5110-home');if(s!==null&&CITIES[+s])homeIdx=+s;}catch(e){}
+
+/* ---------- case, lugs, strap ---------- */
+function buildCaseAndStrap(){
+  const g=el('g',{});
+
+  // crown at 3 o'clock, pusher at 10 — drawn under the case so they emerge from it
+  const crown=el('g',{transform:`translate(${CX+344} ${CY})`},g);
+  el('rect',{x:-30,y:-44,width:72,height:88,rx:15,fill:'url(#goldFlank)'},crown);
+  // fluting runs across the crown, filling it edge to edge
+  for(let i=0;i<11;i++) el('line',{x1:-28,y1:-40+i*8,x2:40,y2:-40+i*8,
+    stroke:'#a87c2c','stroke-width':'3.4',opacity:'.45','stroke-linecap':'round'},crown);
+  el('rect',{x:-40,y:-30,width:26,height:60,rx:8,fill:'url(#goldCase)'},crown);
+  const PA=-60;
+  const [px,py]=pol(348,PA);
+  const push=el('g',{transform:
+    `translate(${px.toFixed(1)} ${py.toFixed(1)}) rotate(${PA-90})`},g);
+  el('rect',{x:-30,y:-44,width:56,height:88,rx:14,fill:'url(#goldFlank)'},push);
+  el('rect',{x:-30,y:-44,width:56,height:88,rx:14,fill:'none',stroke:'#a87c2c',
+    'stroke-width':'1.6',opacity:'.55'},push);
+
+  // case body and bezel
+  el('circle',{cx:CX,cy:CY,r:R_CASE,fill:'url(#goldCase)',filter:'url(#caseShadow)'},g);
+  el('circle',{cx:CX,cy:CY,r:R_CASE,fill:'none',stroke:'#96701f','stroke-width':'1.4',
+    opacity:'.45'},g);
+  // polished caseband: specular arc top-left, shadow arc bottom-right
+  const spec=el('g',{filter:'url(#specBlur)','clip-path':'url(#caseClip)'},g);
+  el('path',{d:annulus(308,R_CASE+2,-145,-15),fill:'#fdeec4',opacity:'.34'},spec);
+  el('path',{d:annulus(308,R_CASE+2,45,175),fill:'#8d6519',opacity:'.26'},spec);
+  el('circle',{cx:CX,cy:CY,r:322,fill:'none',stroke:'#f7e4ae','stroke-width':'2.6',
+    opacity:'.3'},g);
+  el('circle',{cx:CX,cy:CY,r:314,fill:'url(#goldBezel)'},g);
+  const spec2=el('g',{filter:'url(#specBlur)','clip-path':'url(#caseClip)'},g);
+  el('path',{d:annulus(292,314,-160,-20),fill:'#fdeec4',opacity:'.3'},spec2);
+  el('path',{d:annulus(292,314,30,170),fill:'#8d6519',opacity:'.22'},spec2);
+  el('circle',{cx:CX,cy:CY,r:292,fill:'none',stroke:'#a87c2c','stroke-width':'2.2',
+    opacity:'.55'},g);
+  el('circle',{cx:CX,cy:CY,r:289,fill:'#efece3'},g);
+}
+
+/* letters laid tangentially along an arc; upright at the top, inverted at the bottom */
+function arcText(g,r,centre,str,size,fill,weight){
+  const chars=[...str];
+  let step=(size*0.615)/r*(180/Math.PI);
+  const span=(chars.length-1)*step;
+  if(span>27) step*=27/span;                       // keep names inside their half-slot
+  const start=centre-(chars.length-1)*step/2;
+  chars.forEach((ch,i)=>{
+    if(ch===' ')return;
+    const a=start+i*step;
+    const [x,y]=pol(r,a);
+    el('text',{x:x.toFixed(2),y:y.toFixed(2),'font-size':size,fill,
+      'font-weight':weight||'600','text-anchor':'middle','dominant-baseline':'central',
+      transform:`rotate(${a.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)})`},g).textContent=ch;
+  });
+}
+
+let cityRing;
+function buildCityRing(){
+  el('circle',{cx:CX,cy:CY,r:R_CITY_OUT,fill:'url(#ringGrad)'});
+  // fine hatched flange at the very outer edge of the silver ring
+  const flange=el('g',{opacity:'.5'});
+  for(let i=0;i<240;i++){
+    const a=i*1.5;
+    const [x1,y1]=pol(R_CITY_OUT-1,a),[x2,y2]=pol(R_CITY_OUT-7,a);
+    el('line',{x1:x1.toFixed(1),y1:y1.toFixed(1),x2:x2.toFixed(1),y2:y2.toFixed(1),
+      stroke:'#9c9484','stroke-width':'.6'},flange);
+  }
+  el('circle',{cx:CX,cy:CY,r:R_CITY_OUT-8,fill:'none',stroke:'#9c9484','stroke-width':'.9'});
+  cityRing=el('g',{id:'cityRing'});
+  redrawCityRing();
+}
+function redrawCityRing(){
+  while(cityRing.firstChild) cityRing.removeChild(cityRing.firstChild);
+  for(let i=0;i<N;i++){
+    const a=(i-homeIdx)*STEP;
+    const name=CITIES[i][0];
+    // the engraved ring staggers alternate names between two radii so the long
+    // ones fit — even slots ride the outer track, odd slots the inner
+    const r=(i%2===0)?R_CITY_TXT_OUT:R_CITY_TXT_IN;
+    arcText(cityRing,r,a,name,21,'#17171a','600');
+    const [hx,hy]=pol(r,a);
+    const hit=el('circle',{cx:hx.toFixed(2),cy:hy.toFixed(2),r:21,fill:'transparent',
+      class:'hit'},cityRing);
+    el('title',{},hit).textContent=`Set ${name} as home city`;
+    hit.addEventListener('click',ev=>{ev.stopPropagation();setHome(i);});
+  }
+}
+
+let dayNight, numerals=[];
+function buildHourRing(){
+  // the 24-hour disc sits a step below the city ring
+  el('circle',{cx:CX,cy:CY,r:R_H_OUT+3,fill:'#e9e5da',filter:'url(#ringInset)'});
+  dayNight=el('g',{id:'dayNight'});
+  // drawn in "hour space": hour h sits at h*15°, group rotated by -localHour*15.
+  // Slot h spans h±0.5, so day is 6.5 → 18.5 and night 18.5 → 30.5.
+  el('path',{d:annulus(R_H_IN,R_H_OUT,6.5*STEP,18.5*STEP),fill:'url(#dayGrad)'},dayNight);
+  el('path',{d:annulus(R_H_IN,R_H_OUT,18.5*STEP,30.5*STEP),fill:'url(#nightGrad)'},dayNight);
+  // the sun star occupies the 12 slot, the moon the 24 slot — neither is numbered
+  const [sx,sy]=pol(R_H_TXT,12*STEP);
+  const sun=el('g',{transform:`translate(${sx.toFixed(1)} ${sy.toFixed(1)})`},dayNight);
+  let d='';
+  for(let i=0;i<16;i++){
+    const R=(i%2===0)?11:4.2, a=i*Math.PI/8-Math.PI/2;
+    d+=(i?'L':'M')+(R*Math.cos(a)).toFixed(2)+' '+(R*Math.sin(a)).toFixed(2)+' ';
+  }
+  el('path',{d:d+'Z',fill:'#c08a1e'},sun);
+  const [mx,my]=pol(R_H_TXT,0);
+  el('path',{d:'M0 -10.5 A10.5 10.5 0 1 0 0 10.5 A8 8 0 1 1 0 -10.5 Z',fill:'#d8b45c',
+    transform:`translate(${mx.toFixed(1)} ${my.toFixed(1)}) rotate(-28)`},dayNight);
+
+  const numG=el('g',{id:'numerals'});
+  for(let i=0;i<N;i++){
+    numerals.push(el('text',{'font-size':'22','text-anchor':'middle',
+      'dominant-baseline':'central','font-weight':'600'},numG));
+  }
+  el('circle',{cx:CX,cy:CY,r:R_H_OUT,fill:'none',stroke:'#2b2a26','stroke-width':'1.3'});
+  el('circle',{cx:CX,cy:CY,r:R_H_IN,fill:'none',stroke:'#2b2a26','stroke-width':'1.1'});
+
+  // alignment triangles on the step between the rings, one per zone
+  const tri=el('g',{id:'triangles'});
+  for(let i=0;i<N;i++){
+    const a=i*STEP;
+    const [tx,ty]=pol(R_H_OUT+1.5,a);
+    el('path',{d:'M-6 0 L6 0 L0 -9.5 Z',fill:'#1c1b18',
+      transform:`translate(${tx.toFixed(2)} ${ty.toFixed(2)}) rotate(${a.toFixed(2)})`},tri);
+  }
+}
+
+function buildDial(){
+  el('circle',{cx:CX,cy:CY,r:R_DIAL,fill:'url(#dialGrad)'});
+  // fine circular guilloche
+  const gl=el('g',{'clip-path':'url(#dialClip)',opacity:'.8'});
+  for(let r=5;r<R_DIAL-2;r+=2.9)
+    el('circle',{cx:CX,cy:CY,r:r.toFixed(1),fill:'none',stroke:'#a79e88','stroke-width':'.85'},gl);
+  el('circle',{cx:CX,cy:CY,r:R_DIAL,fill:'url(#dialGrad)',opacity:'.2'});
+  el('circle',{cx:CX,cy:CY,r:R_DIAL,fill:'none',stroke:'#a9a08d','stroke-width':'1'});
+
+  // twelve applied gold bars, one flat tone; the 12 carries an arrowhead
+  const BAR='M-3.2 -107 L-3.2 -148 L3.2 -148 L3.2 -107 Z';
+  const BAR12='M-3.2 -107 L-3.2 -144 L-8.5 -144 L0 -155 L8.5 -144 L3.2 -144 L3.2 -107 Z';
+  for(let i=0;i<12;i++){
+    el('path',{d:i===0?BAR12:BAR,fill:'#c99a45',
+      transform:`translate(${CX} ${CY}) rotate(${i*30})`});
+  }
+  // split so neither word runs into the 6 o'clock bar
+  el('text',{x:CX-22,y:CY+134,'font-size':'8.6','text-anchor':'end',fill:'#6f6a5c',
+    'letter-spacing':'1.2'}).textContent='CLAUDE';
+  el('text',{x:CX+22,y:CY+134,'font-size':'8.6','text-anchor':'start',fill:'#6f6a5c',
+    'letter-spacing':'1.2'}).textContent='MADE';
+}
+
+function buildHands(){
+  const g=el('g',{filter:'url(#handShadow)'});
+  const leaf=(len,w)=>`M0 15 C ${-w*0.7} 2, ${-w} ${-len*0.44}, 0 ${-len}`
+                    + ` C ${w} ${-len*0.44}, ${w*0.7} 2, 0 15 Z`;
+  const mk=(id,len,w)=>{
+    const h=el('g',{id},g);
+    el('path',{d:leaf(len,w),fill:'url(#goldHand)',stroke:'#7d5c1c','stroke-width':'.9',
+      transform:`translate(${CX} ${CY})`},h);
+    return h;
+  };
+  mk('handHour',98,10.5);
+  mk('handMinute',138,7.6);
+  el('circle',{cx:CX,cy:CY,r:7,fill:'url(#goldHand)',stroke:'#7d5c1c','stroke-width':'.9'},g);
+  el('circle',{cx:CX,cy:CY,r:2.4,fill:'#2b2318'},g);
+}
+
+function buildCrystal(){
+  el('circle',{cx:CX,cy:CY,r:R_CITY_OUT+4,fill:'url(#crystal)','pointer-events':'none'});
+  // the pusher nub is drawn under the case, so its tap target lives on top
+  const [px,py]=pol(352,-60);
+  const hit=el('circle',{cx:px.toFixed(1),cy:py.toFixed(1),r:44,fill:'transparent',class:'hit'});
+  el('title',{},hit).textContent='Advance home city';
+  hit.addEventListener('click',ev=>{ev.stopPropagation();setHome(homeIdx+1);});
+}
+
+/* ---------- atomic time sync (multi-source consensus) ---------- */
+const params=new URLSearchParams(location.search);
+const simAt=params.get('at')?Date.parse(params.get('at')):null;
+const SYNC={offset:0,rtt:null,source:null,synced:false,state:simAt?'sim':'syncing'};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function timedFetch(url,opts){
+  const ctl=new AbortController();
+  const kill=setTimeout(()=>ctl.abort(),5000);
+  return fetch(url,Object.assign({cache:'no-store',signal:ctl.signal},opts))
+    .finally(()=>clearTimeout(kill));
+}
+async function sampleWorldTime(){
+  const t0=Date.now();
+  const res=await timedFetch('https://worldtimeapi.org/api/timezone/Etc/UTC');
+  const t1=Date.now();
+  if(!res.ok)throw new Error('http '+res.status);
+  const j=await res.json();
+  const server=Date.parse(j.utc_datetime);
+  if(!Number.isFinite(server))throw new Error('bad payload');
+  return {offset:server+(t1-t0)/2-t1,rtt:t1-t0};
+}
+async function sampleTimeApiIo(){
+  const t0=Date.now();
+  const res=await timedFetch('https://timeapi.io/api/Time/current/zone?timeZone=Etc%2FUTC');
+  const t1=Date.now();
+  if(!res.ok)throw new Error('http '+res.status);
+  const j=await res.json();
+  const m=/^([^.]+)(?:\.(\d+))?/.exec(j.dateTime||'');
+  if(!m)throw new Error('bad payload');
+  const server=Date.parse(m[1]+'Z')+(m[2]?Math.round(Number('0.'+m[2])*1000):0);
+  if(!Number.isFinite(server))throw new Error('bad payload');
+  return {offset:server+(t1-t0)/2-t1,rtt:t1-t0};
+}
+// Origin HTTP Date header: second-accurate NTP time from whatever serves this page.
+// Sub-second precision comes from watching for the second rollover across rapid HEADs.
+async function sampleOrigin(){
+  if(location.protocol==='file:')throw new Error('no origin');
+  const url=()=>location.pathname+'?ntp='+Math.random();
+  let prev=null,last=null;
+  for(let i=0;i<9;i++){
+    const t0=Date.now();
+    const res=await timedFetch(url(),{method:'HEAD'});
+    const t1=Date.now();
+    const dh=res.headers.get('date');
+    if(!dh)throw new Error('no date header');
+    const D=Date.parse(dh);
+    if(!Number.isFinite(D))throw new Error('bad date header');
+    if(prev!==null&&D>prev)return {offset:D-(t0+t1)/2,rtt:(t1-t0)+130};
+    prev=D;last={D,t0,t1};
+    await sleep(130);
+  }
+  return {offset:last.D+500-(last.t0+last.t1)/2,rtt:1000};
+}
+async function getBest(fn,n){
+  const samples=[];
+  for(let i=0;i<n;i++){samples.push(await fn());if(i<n-1)await sleep(150);}
+  return samples.reduce((a,b)=>a.rtt<b.rtt?a:b);
+}
+let failCount=0;
+async function doSync(){
+  SYNC.state=SYNC.synced?SYNC.state:'syncing';
+  const [wta,org,tio]=await Promise.allSettled([
+    getBest(sampleWorldTime,2),sampleOrigin(),getBest(sampleTimeApiIo,2)]);
+  const cands=[];
+  if(wta.status==='fulfilled')cands.push(['WORLDTIMEAPI',wta.value]);
+  if(org.status==='fulfilled')cands.push(['ORIGIN HTTP',org.value]);
+  if(tio.status==='fulfilled')cands.push(['TIMEAPI.IO',tio.value]);
+  const agree=(a,b)=>Math.abs(a.offset-b.offset)<1500;
+  let pick=null;
+  if(cands.length===1){
+    pick=cands[0];
+    if(pick[0]==='TIMEAPI.IO'&&Math.abs(pick[1].offset)>5000)pick=null;
+  }else if(cands.length>1){
+    pick=cands.find(c=>cands.some(o=>o!==c&&agree(c[1],o[1])))
+      ||cands.find(c=>c[0]==='ORIGIN HTTP')||cands[0];
+  }
+  if(pick){
+    Object.assign(SYNC,{offset:pick[1].offset,rtt:pick[1].rtt,
+      source:pick[0],synced:true,state:'ok'});
+    failCount=0;
+    setTimeout(doSync,10*60*1000);
+    return;
+  }
+  SYNC.synced=false;SYNC.state='fail';
+  failCount++;
+  setTimeout(doSync,Math.min(300000,30000*Math.pow(2,failCount-1)));
+}
+const now=()=>simAt??(Date.now()+SYNC.offset);
+
+/* ---------- live rendering ---------- */
+const MONTHS=['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY',
+  'AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+const DAYS=['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
+const pad=n=>String(n).padStart(2,'0');
+let lastCaption=0;
+
+function setHome(i){
+  homeIdx=((i%N)+N)%N;
+  try{localStorage.setItem('pp5110-home',String(homeIdx));}catch(e){}
+  redrawCityRing();
+}
+
+function render(){
+  const ms=now();
+  const home=CITIES[homeIdx];
+  const homeOff=zoneOffsetMin(home[1],ms);                 // real offset, DST included
+  const d=new Date(ms+homeOff*60000);
+  const h=d.getUTCHours(),m=d.getUTCMinutes(),s=d.getUTCSeconds(),mil=d.getUTCMilliseconds();
+  const hourFloat=h+m/60+s/3600+mil/3600000;
+
+  // centre hands: home city local time
+  $('handMinute').setAttribute('transform',
+    `rotate(${((m+s/60+mil/60000)*6).toFixed(3)} ${CX} ${CY})`);
+  $('handHour').setAttribute('transform',
+    `rotate(${(((h%12)+m/60+s/3600)*30).toFixed(3)} ${CX} ${CY})`);
+
+  // day / night band, sun and moon rotate continuously with home local time
+  dayNight.setAttribute('transform',
+    `rotate(${(-hourFloat*STEP).toFixed(3)} ${CX} ${CY})`);
+
+  // 24-hour numerals: each city's own true local hour, sharing the ring's drift.
+  // 12 and 24 are never printed — the sun and the moon stand in their place.
+  const frac=hourFloat-Math.floor(hourFloat);
+  for(let i=0;i<N;i++){
+    const off=zoneOffsetMin(CITIES[i][1],ms);
+    const hr=Math.floor((((ms+off*60000)/3600000)%24+24)%24);
+    const a=(i-homeIdx)*STEP-frac*STEP;
+    const [x,y]=pol(R_H_TXT,a);
+    const t=numerals[i];
+    const night=(hr<6.5||hr>=18.5);
+    t.textContent=(hr===0||hr===12)?'':String(hr);
+    t.setAttribute('x',x.toFixed(2));
+    t.setAttribute('y',y.toFixed(2));
+    t.setAttribute('fill',night?'#f2efe6':'#2c3a5e');
+    t.setAttribute('transform',`rotate(${a.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)})`);
+  }
+
+  if(ms-lastCaption>1000){
+    lastCaption=ms;
+    // the dial carries no printed caption; the document title keeps the readout
+    const sign=homeOff<0?'−':'+', ao=Math.abs(homeOff);
+    document.title=`${pad(h)}:${pad(m)} ${home[0]} · UTC${sign}${pad(Math.floor(ao/60))}`
+      +`:${pad(ao%60)} · ${DAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}`
+      +` ${d.getUTCFullYear()} · ${SYNC.state==='ok'?SYNC.source:SYNC.state.toUpperCase()}`;
+  }
+  requestAnimationFrame(render);
+}
+
+/* ---------- interaction ---------- */
+// triple-click background toggle (Notion embeds this page in an iframe with
+// no way to pass its theme in, and Notion's iframe sandbox can silently block
+// localStorage — so persistence tries localStorage AND a cookie, each
+// wrapped so a throw in one doesn't stop the other)
+const BG_KEY='patekNotionDark';
+function saveDark(on){
+  const s=on?'1':'0';
+  try{localStorage.setItem(BG_KEY,s);}catch(e){}
+  try{document.cookie=BG_KEY+'='+s+';max-age=31536000;path=/;SameSite=Lax';}catch(e){}
+}
+function loadDark(){
+  try{const v=localStorage.getItem(BG_KEY);if(v!==null)return v==='1';}catch(e){}
+  try{const m=document.cookie.match(new RegExp('(?:^|;\\s*)'+BG_KEY+'=([^;]*)'));if(m)return m[1]==='1';}catch(e){}
+  return false;
+}
+function applyDarkBg(on){
+  document.documentElement.classList.toggle('dark-bg',on);
+  document.body.classList.toggle('dark-bg',on);
+}
+if(loadDark())applyDarkBg(true);
+(function(){
+  let clicks=[];
+  document.querySelector('figure').addEventListener('click',()=>{
+    const t=Date.now();
+    clicks=clicks.filter(x=>t-x<700);
+    clicks.push(t);
+    if(clicks.length>=3){
+      clicks=[];
+      const on=!document.body.classList.contains('dark-bg');
+      applyDarkBg(on);
+      saveDark(on);
+    }
+  });
+})();
+
+/* ---------- boot ---------- */
+buildCaseAndStrap();
+buildCityRing();
+buildHourRing();
+buildDial();
+buildHands();
+buildCrystal();
+
+addEventListener('keydown',ev=>{
+  if(ev.key==='ArrowRight'){setHome(homeIdx+1);ev.preventDefault();}
+  else if(ev.key==='ArrowLeft'){setHome(homeIdx-1);ev.preventDefault();}
+  else if(ev.key==='b'||ev.key==='B'){
+    const on=!document.body.classList.contains('dark-bg');
+    applyDarkBg(on);
+    saveDark(on);
+  }
+});
+
+render();
+if(!simAt)doSync();
+</script>
+</body>
+</html>
