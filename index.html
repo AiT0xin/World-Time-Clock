@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Patek Philippe 5110 World Time — Live</title>
+<title>World Time — Live</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23d3a445'/%3E%3Ccircle cx='50' cy='50' r='33' fill='%23f2efe6'/%3E%3Ccircle cx='50' cy='50' r='22' fill='%231b1d21'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23f6f3ea'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -30,7 +30,7 @@
 </head>
 <body>
 <main>
-  <figure aria-label="Patek Philippe reference 5110 World Time, live">
+  <figure aria-label="World Time watch, live atomic-synced">
   <svg id="svg" viewBox="144 148 750 704" role="img">
     <defs>
       <linearGradient id="goldCase" x1=".12" y1="0" x2=".82" y2="1">
@@ -179,7 +179,7 @@ let homeIdx=(function(){
   for(let i=0;i<N;i++){const d=Math.abs(CITIES[i][2]-off);if(d<bd){bd=d;best=i;}}
   return best;
 })();
-try{const s=localStorage.getItem('pp5110-home');if(s!==null&&CITIES[+s])homeIdx=+s;}catch(e){}
+try{const s=localStorage.getItem('worldtime-home');if(s!==null&&CITIES[+s])homeIdx=+s;}catch(e){}
 
 /* ---------- case, lugs, strap ---------- */
 function buildCaseAndStrap(){
@@ -454,7 +454,7 @@ let lastCaption=0;
 
 function setHome(i){
   homeIdx=((i%N)+N)%N;
-  try{localStorage.setItem('pp5110-home',String(homeIdx));}catch(e){}
+  try{localStorage.setItem('worldtime-home',String(homeIdx));}catch(e){}
   redrawCityRing();
 }
 
@@ -509,7 +509,7 @@ function render(){
 // no way to pass its theme in, and Notion's iframe sandbox can silently block
 // localStorage — so persistence tries localStorage AND a cookie, each
 // wrapped so a throw in one doesn't stop the other)
-const BG_KEY='patekNotionDark';
+const BG_KEY='worldtimeNotionDark';
 function saveDark(on){
   const s=on?'1':'0';
   try{localStorage.setItem(BG_KEY,s);}catch(e){}
