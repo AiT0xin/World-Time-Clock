@@ -1,4 +1,4 @@
-# Patek Philippe Ref. 5110 J — World Time, live
+#World Time, live
 
 A single-file SVG rendering of the yellow-gold Patek Philippe 5110 *Heure Universelle*,
 running on atomic time with a fully working Cottier world-time complication.
