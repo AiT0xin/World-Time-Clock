@@ -486,7 +486,7 @@ function render(){
     t.textContent=(i===12||i===0)?'':String(i);
     t.setAttribute('x',x.toFixed(2));
     t.setAttribute('y',y.toFixed(2));
-    t.setAttribute('fill','#ffffff');
+    t.setAttribute('fill',(i>=7&&i<=18)?'#1c1b18':'#ffffff');  // day 7-18 dark on silver, night white
     t.setAttribute('transform',`rotate(${a.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)})`);
   }
 
