@@ -484,11 +484,10 @@ function render(){
     const [x,y]=pol(R_H_TXT,a);
     const t=numerals[i];
     const hr=i;  // each slot displays its index as the hour
-    const night=(hr<6.5||hr>=18.5);
     t.textContent=(hr===12)?'':String(hr);
     t.setAttribute('x',x.toFixed(2));
     t.setAttribute('y',y.toFixed(2));
-    t.setAttribute('fill',night?'#f2efe6':'#2c3a5e');
+    t.setAttribute('fill','#1c1b18');
     t.setAttribute('transform',`rotate(${a.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)})`);
   }
 
