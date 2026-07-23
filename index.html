@@ -476,17 +476,16 @@ function render(){
   dayNight.setAttribute('transform',
     `rotate(${(-hourFloat*STEP).toFixed(3)} ${CX} ${CY})`);
 
-  // 24-hour numerals: each city's own true local hour, sharing the ring's drift.
-  // 12 and 24 are never printed — the sun and the moon stand in their place.
+  // 24-hour static ring: hours 0-23 evenly spaced around the dial.
+  // Slot i shows hour i, with 12 left blank for the sun symbol.
   const frac=hourFloat-Math.floor(hourFloat);
   for(let i=0;i<N;i++){
-    const off=zoneOffsetMin(CITIES[i][1],ms);
-    const hr=Math.floor((((ms+off*60000)/3600000)%24+24)%24);
     const a=(i-homeIdx)*STEP-frac*STEP;
     const [x,y]=pol(R_H_TXT,a);
     const t=numerals[i];
+    const hr=i;  // each slot displays its index as the hour
     const night=(hr<6.5||hr>=18.5);
-    t.textContent=(hr===0||hr===12)?'':String(hr);
+    t.textContent=(hr===12)?'':String(hr);
     t.setAttribute('x',x.toFixed(2));
     t.setAttribute('y',y.toFixed(2));
     t.setAttribute('fill',night?'#f2efe6':'#2c3a5e');
