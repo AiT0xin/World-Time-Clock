@@ -272,7 +272,8 @@ let dayNight, numerals=[];
 function buildHourRing(){
   // the 24-hour disc sits a step below the city ring
   el('circle',{cx:CX,cy:CY,r:R_H_OUT+3,fill:'#e9e5da',filter:'url(#ringInset)'});
-  dayNight=el('g',{id:'dayNight'});
+  // static ring: rotate hour-space so hour 12 (day centre / sun) sits at the top
+  dayNight=el('g',{id:'dayNight',transform:`rotate(${-12*STEP} ${CX} ${CY})`});
   // drawn in "hour space": hour h sits at h*15°, group rotated by -localHour*15.
   // Slot h spans h±0.5, so day is 6.5 → 18.5 and night 18.5 → 30.5.
   el('path',{d:annulus(R_H_IN,R_H_OUT,6.5*STEP,18.5*STEP),fill:'url(#dayGrad)'},dayNight);
@@ -472,19 +473,18 @@ function render(){
   $('handHour').setAttribute('transform',
     `rotate(${(((h%12)+m/60+s/3600)*30).toFixed(3)} ${CX} ${CY})`);
 
-  // day / night band, sun and moon rotate continuously with home local time
-  dayNight.setAttribute('transform',
-    `rotate(${(-hourFloat*STEP).toFixed(3)} ${CX} ${CY})`);
+  // The 24-hour ring is static: noon (12, sun) sits at the top and midnight
+  // (24, moon) at the bottom. Day (silver) runs 7–18 across the top, night
+  // (charcoal) 19–6 across the bottom. The band's fixed rotation is set once
+  // in buildHourRing, so nothing here needs to move it per frame.
 
-  // 24-hour static ring: hours 0-23 evenly spaced around the dial.
-  // Slot i shows hour i, with 12 left blank for the sun symbol.
-  const frac=hourFloat-Math.floor(hourFloat);
+  // 24-hour static ring: 1–23 evenly spaced. Slots 12 (sun) and 24/0 (moon)
+  // carry no numeral — the symbols occupy them.
   for(let i=0;i<N;i++){
-    const a=(i-homeIdx)*STEP-frac*STEP;
+    const a=(i-12)*STEP;
     const [x,y]=pol(R_H_TXT,a);
     const t=numerals[i];
-    const hr=i;  // each slot displays its index as the hour
-    t.textContent=(hr===12)?'':String(hr);
+    t.textContent=(i===12||i===0)?'':String(i);
     t.setAttribute('x',x.toFixed(2));
     t.setAttribute('y',y.toFixed(2));
     t.setAttribute('fill','#ffffff');
