@@ -289,7 +289,7 @@ function buildHourRing(){
   }
   el('path',{d:d+'Z',fill:'#c08a1e'},sun);
   const [mx,my]=pol(R_H_TXT,0);
-  el('path',{d:'M0 -13 A13 13 0 1 0 0 13 A10 10 0 1 1 0 -13 Z',fill:'#f4e3a8',
+  el('path',{d:'M0 -13 A13 13 0 1 0 0 13 A10 10 0 1 1 0 -13 Z',fill:'#ffffff',
     transform:`translate(${mx.toFixed(1)} ${my.toFixed(1)}) rotate(-28)`},dayNight);
 
   const numG=el('g',{id:'numerals'});
