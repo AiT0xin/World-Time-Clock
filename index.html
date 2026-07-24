@@ -253,12 +253,10 @@ function buildCityRing(){
 }
 function redrawCityRing(){
   while(cityRing.firstChild) cityRing.removeChild(cityRing.firstChild);
-  const ms=now();
-  const offHome=zoneOffsetMin(CITIES[homeIdx][1],ms);
   for(let i=0;i<N;i++){
-    // place each city at its REAL offset from home (DST-aware) so the numeral
-    // sitting under it is always that city's true local hour — 15° per hour.
-    const a=(zoneOffsetMin(CITIES[i][1],ms)-offHome)/60*STEP;
+    // evenly spaced Patek-style ring: one zone per 15°, home at the top.
+    // (Standard-time layout — DST cities read an hour off, like the real watch.)
+    const a=(i-homeIdx)*STEP;
     const name=CITIES[i][0];
     // the engraved ring staggers alternate names between two radii so the long
     // ones fit — even slots ride the outer track, odd slots the inner
