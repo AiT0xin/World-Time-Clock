@@ -463,7 +463,11 @@ function setHome(i){
 function render(){
   const ms=now();
   const home=CITIES[homeIdx];
-  const homeOff=zoneOffsetMin(home[1],ms);                 // real offset, DST included
+  // Standard-time offset, straight off the evenly spaced ring. The ring places
+  // one zone every 15°, which only holds for standard time — real DST offsets
+  // are not evenly spaced, so mixing them in made the pusher jump 0h or 2h
+  // between neighbours (Mexico→New York) instead of a clean hour each step.
+  const homeOff=home[2]*60;
   const d=new Date(ms+homeOff*60000);
   const h=d.getUTCHours(),m=d.getUTCMinutes(),s=d.getUTCSeconds(),mil=d.getUTCMilliseconds();
   const hourFloat=h+m/60+s/3600+mil/3600000;
@@ -474,15 +478,20 @@ function render(){
   $('handHour').setAttribute('transform',
     `rotate(${(((h%12)+m/60+s/3600)*30).toFixed(3)} ${CX} ${CY})`);
 
-  // 24-hour ring rotates so the home city's current hour sits at the top.
+  // The 24-hour ring advances a whole slot at a time, so it stays locked to the
+  // city ring — the numeral under a city is always exactly that city's hour.
+  // A continuous rotation would drift the numerals up to half a slot off the
+  // cities by the middle of each hour. The centre hands carry the minutes.
+  const hourSlot=Math.floor(hourFloat);
+
   // Day (silver) runs 7–18, night (charcoal) 19–6; sun rides 12, moon 24.
   dayNight.setAttribute('transform',
-    `rotate(${(-hourFloat*STEP).toFixed(3)} ${CX} ${CY})`);
+    `rotate(${(-hourSlot*STEP).toFixed(3)} ${CX} ${CY})`);
 
   // numerals share the band's frame: hour h at (h − localHour) around the dial,
   // so 12 (sun) and 24/0 (moon) stay blank and the symbols occupy them.
   for(let i=0;i<N;i++){
-    const a=(i-hourFloat)*STEP;
+    const a=(i-hourSlot)*STEP;
     const [x,y]=pol(R_H_TXT,a);
     const t=numerals[i];
     t.textContent=(i===12||i===0)?'':String(i);
