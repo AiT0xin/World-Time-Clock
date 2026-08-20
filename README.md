@@ -1,5 +1,7 @@
 # World Time Clock — Live
 
+<img width="917" height="828" alt="World Time Clock" src="https://github.com/user-attachments/assets/be3e90cd-cd94-46a8-a530-385394a62e60" />
+
 A single-file SVG rendering of a yellow-gold world-time watch head running on atomic time
 with a fully working Cottier-style world-time complication.
 
