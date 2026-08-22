@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>World Time — Live</title>
+<title>World Time - Live</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23d3a445'/%3E%3Ccircle cx='50' cy='50' r='33' fill='%23f2efe6'/%3E%3Ccircle cx='50' cy='50' r='22' fill='%231b1d21'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23f6f3ea'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -119,7 +119,7 @@ const R_CITY_TXT_OUT=262, R_CITY_TXT_IN=217;   // names alternate between two ra
 const R_H_OUT=194, R_H_IN=158, R_H_TXT=176;
 const R_DIAL=156;
 
-/* ---------- the Cottier city ring: 24 zones, one per hour of longitude ---------- */
+/* ---------- the world-time city ring: 24 zones, one per hour of longitude ---------- */
 const CITIES=[
   ['LONDON',      'Europe/London',        0],
   ['PARIS',       'Europe/Paris',         1],
@@ -148,7 +148,7 @@ const CITIES=[
 ];
 const N=CITIES.length, STEP=360/N;   // 15° per zone
 
-// true UTC offset (minutes) of an IANA zone at instant ms — honours DST
+// true UTC offset (minutes) of an IANA zone at instant ms - honours DST
 const fmtCache={};
 function zoneFmt(tz){
   if(!fmtCache[tz]) fmtCache[tz]=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hourCycle:'h23',
@@ -169,7 +169,7 @@ function zoneAbbr(tz,ms){
   }catch(e){return '';}
 }
 
-/* home city — defaults to the ring zone nearest the browser's own offset */
+/* home city - defaults to the ring zone nearest the browser's own offset */
 let homeIdx=(function(){
   const tz=Intl.DateTimeFormat().resolvedOptions().timeZone;
   const exact=CITIES.findIndex(c=>c[1]===tz);
@@ -185,7 +185,7 @@ try{const s=localStorage.getItem('worldtime-home');if(s!==null&&CITIES[+s])homeI
 function buildCaseAndStrap(){
   const g=el('g',{});
 
-  // crown at 3 o'clock, pusher at 10 — drawn under the case so they emerge from it
+  // crown at 3 o'clock, pusher at 10 - drawn under the case so they emerge from it
   const crown=el('g',{transform:`translate(${CX+344} ${CY})`},g);
   el('rect',{x:-30,y:-44,width:72,height:88,rx:15,fill:'url(#goldFlank)'},crown);
   // fluting runs across the crown, filling it edge to edge
@@ -254,12 +254,12 @@ function buildCityRing(){
 function redrawCityRing(){
   while(cityRing.firstChild) cityRing.removeChild(cityRing.firstChild);
   for(let i=0;i<N;i++){
-    // evenly spaced Patek-style ring: one zone per 15°, home at the top.
-    // (Standard-time layout — DST cities read an hour off, like the real watch.)
+    // evenly spaced ring: one zone per 15°, home at the top.
+    // (Standard-time layout - DST cities read an hour off, like the real watch.)
     const a=(i-homeIdx)*STEP;
     const name=CITIES[i][0];
     // the engraved ring staggers alternate names between two radii so the long
-    // ones fit — even slots ride the outer track, odd slots the inner
+    // ones fit - even slots ride the outer track, odd slots the inner
     const r=(i%2===0)?R_CITY_TXT_OUT:R_CITY_TXT_IN;
     arcText(cityRing,r,a,name,21,'#17171a','600');
     const [hx,hy]=pol(r,a);
@@ -279,7 +279,7 @@ function buildHourRing(){
   // Slot h spans h±0.5, so day is 6.5 → 18.5 and night 18.5 → 30.5.
   el('path',{d:annulus(R_H_IN,R_H_OUT,6.5*STEP,18.5*STEP),fill:'url(#dayGrad)'},dayNight);
   el('path',{d:annulus(R_H_IN,R_H_OUT,18.5*STEP,30.5*STEP),fill:'url(#nightGrad)'},dayNight);
-  // the sun star occupies the 12 slot, the moon the 24 slot — neither is numbered
+  // the sun star occupies the 12 slot, the moon the 24 slot - neither is numbered
   const [sx,sy]=pol(R_H_TXT,12*STEP);
   const sun=el('g',{transform:`translate(${sx.toFixed(1)} ${sy.toFixed(1)})`},dayNight);
   let d='';
@@ -467,7 +467,7 @@ function render(){
   const ms=now();
   const home=CITIES[homeIdx];
   // Standard-time offset, straight off the evenly spaced ring. The ring places
-  // one zone every 15°, which only holds for standard time — real DST offsets
+  // one zone every 15°, which only holds for standard time - real DST offsets
   // are not evenly spaced, so mixing them in made the pusher jump 0h or 2h
   // between neighbours (Mexico→New York) instead of a clean hour each step.
   const homeOff=home[2]*60;
@@ -482,7 +482,7 @@ function render(){
     `rotate(${(((h%12)+m/60+s/3600)*30).toFixed(3)} ${CX} ${CY})`);
 
   // The 24-hour ring advances a whole slot at a time, so it stays locked to the
-  // city ring — the numeral under a city is always exactly that city's hour.
+  // city ring - the numeral under a city is always exactly that city's hour.
   // A continuous rotation would drift the numerals up to half a slot off the
   // cities by the middle of each hour. The centre hands carry the minutes.
   const hourSlot=Math.floor(hourFloat);
@@ -518,7 +518,7 @@ function render(){
 /* ---------- interaction ---------- */
 // triple-click background toggle (Notion embeds this page in an iframe with
 // no way to pass its theme in, and Notion's iframe sandbox can silently block
-// localStorage — so persistence tries localStorage AND a cookie, each
+// localStorage - so persistence tries localStorage AND a cookie, each
 // wrapped so a throw in one doesn't stop the other)
 const BG_KEY='worldtimeNotionDark';
 function saveDark(on){
